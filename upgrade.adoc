@@ -4,7 +4,7 @@
 :product-family: Zimbra
 :product-provider: Zimbra
 :product-abbrev: ZCS
-:product-version: 8.7.0 GA
+:product-version: 8.8.0 GA
 :product-admin-guide: {product-name} Administration Guide
 :icons: font
 :title-logo-image: images/zimbra-logo-non-interlaced.png
@@ -107,6 +107,24 @@ Linux zre-ubuntu12-64 3.11.0-17-generic #31~precise1-Ubuntu SMP Tue Feb 4
 * CentOS Linux® 7 (64-bit)
 * Red Hat Enterprise Linux 6, AS/ES (64-bit), patch level 4 or later is required
 * CentOS Linux 6 (64-bit), patch level 4 or later is required
+
+=== Ephemeral Data Migration
+
+Versions of {product-short} prior to {product-version} stored
+_ephemeral data_ in _LDAP_.  Examples of _ephemeral data_ include:
+
+* `zimbraAuthTokens`
+* `zimbraCsrfTokenData`
+* `zimbraLastLogonTimestamp`
+
+{product-name} version {product-version} introduced the ability to
+store _ephemeral data_ in an external service such as
+http://ssdb.io/[SSDB]. This will improve _LDAP_ performance and
+stability.
+
+Please refer to the _{product-admin-guide}_ for more information.  Migration will be
+performed as a post-installation step.
+
 
 === License Activation
 
